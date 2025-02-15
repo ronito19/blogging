@@ -1,0 +1,21 @@
+header {
+    background-color: skyblue;
+    color: rgb(57, 52, 52);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 5px solid tomato;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+main .content {
+    width: 100%;
+}
+
+main aside {
+    width: 100%;
+}

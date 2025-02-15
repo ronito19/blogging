@@ -1,0 +1,36 @@
+.form {
+    padding: 0px 25px;
+    font-weight: bold;
+}
+
+.form div {
+    margin: 10px 0px;
+}
+
+input {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    background-color: rgb(214, 232, 250);
+    font-weight: bold;
+}
+
+img {
+    display: block;
+    padding: 10px;
+    width: 100%;
+}
+
+select {
+    display: block;
+    padding: 5px;
+    width: 100%;
+    background-color: rgb(214, 232, 250);
+    font-weight: bold;
+}
+
+button {
+    padding: 10px;
+    background-color: tomato;
+    font-weight: bold;
+}
