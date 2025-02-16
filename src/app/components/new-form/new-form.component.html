@@ -4,27 +4,30 @@
 
     <div>
         <label for="title">Titulo: </label>
-        <input id="title" type="text" placeholder="Introduce el titulo de la noticia">
+        <input id="title" type="text" placeholder="Introduce el titulo de la noticia" [(ngModel)]="newNews.title">
     </div>
 
     <div>
         <label for="image">Imagen: </label>
-        <img id="image" src="" alt="Imagen de la noticia" width="200">
+        <input id="image" type="file" (change)="onImageSelected($event)" accept="image/*">
+    </div>
+    <div ngIf="imagePreview" >
+        <img [src]="imagePreview" alt="Imagen de la noticia" width="200">
     </div>
 
     <div>
-        <label for="reseña">Reseña: </label>
-        <input id="reseña" type="text" placeholder="Descripcion de la noticia">
+        <label for="texto">Texto: </label>
+        <textarea id="texto" placeholder="Descripcion de la noticia" [(ngModel)]="newNews.texto"></textarea>
     </div>
 
     <div>
         <label for="fecha">Fecha: </label>
-        <input id="fecha" type="date" placeholder="Fecha de la noticia">
+        <input id="fecha" type="date" placeholder="Fecha de la noticia" [(ngModel)]="newNews.fecha">
     </div>
 
     <div>
         <label for="tipo">Tipo: </label>
-        <select id="tipo" name="tipo">
+        <select id="tipo" name="tipo" [(ngModel)]="newNews.tipo">
             <option value="">Selecciona el tipo</option>
             <option value="vivienda">Vivienda</option>
             <option value="salud">Salud</option>
@@ -37,5 +40,5 @@
         </select>
     </div>
 
-    <button>Guardar</button>
+    <button (click)="saveNews()">Guardar Noticia</button>
 </div>
