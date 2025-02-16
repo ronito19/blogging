@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { INews } from '../../interfaces/inews.interface';
 
 @Component({
   selector: 'app-new-list',
@@ -7,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './new-list.component.css'
 })
 export class NewListComponent {
+  @Input() news: INews[] = [];
+  texto: string = ""
 
+  ngOnChanges() {
+    this.texto = "";
+    this.news.forEach(news => {
+      this.texto += `<li class="">${news.title}</li>`
+    })
+  }
 }

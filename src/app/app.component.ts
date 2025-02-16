@@ -30,7 +30,7 @@ export class AppComponent {
   ];
 
   getDataForm(event: INews) {
-    this.newList.push(event);
-    console.log(this.newList)
+    this.newList = [...this.newList, event]
+
   }
 }
