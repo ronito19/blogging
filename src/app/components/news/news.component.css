@@ -1,0 +1,25 @@
+.noticias .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+}
+
+.noticias .flex article {
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
+@media(width >= 800px) {
+    .noticias .flex article {
+        width: calc(50% - 0.625rem);
+    }
+}
+
+
+@media(width >= 1200px) {
+    .noticias .flex article {
+        width: calc(33.33% - 0.625rem);
+    }
+}

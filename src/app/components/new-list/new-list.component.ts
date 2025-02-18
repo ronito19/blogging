@@ -14,7 +14,10 @@ export class NewListComponent {
   ngOnChanges() {
     this.texto = "";
     this.news.forEach(news => {
-      this.texto += `<li class="">${news.title}</li>`
+      this.texto += `<li class="">${news.title} 
+                      - ${news.fecha} 
+                      - ${news.tipo}
+                    </li>`
     })
   }
 }

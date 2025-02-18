@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { INews } from '../../interfaces/inews.interface';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-new-form',

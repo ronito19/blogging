@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { INews } from '../../interfaces/inews.interface';
 
 @Component({
   selector: 'app-news',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './news.component.css'
 })
 export class NewsComponent {
+  @Input() MyNews: INews[] = [];
 
+
+  ngOnInit() {
+    console.log(this.MyNews)
+  }
 }

@@ -1,5 +1,3 @@
-import { DatePipe } from "@angular/common";
-
 export interface INews {
     title: string;
     url: string;
