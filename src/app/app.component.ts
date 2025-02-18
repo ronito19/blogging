@@ -3,6 +3,7 @@ import { NewFormComponent } from "./components/new-form/new-form.component";
 import { NewListComponent } from "./components/new-list/new-list.component";
 import { NewsComponent } from "./components/news/news.component";
 import { INews } from './interfaces/inews.interface';
+
 @Component({
   selector: 'app-root',
   imports: [NewFormComponent, NewListComponent, NewsComponent],

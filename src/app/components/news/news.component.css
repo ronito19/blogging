@@ -11,6 +11,7 @@
 }
 
 
+
 @media(width >= 800px) {
     .noticias .flex article {
         width: calc(50% - 0.625rem);

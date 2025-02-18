@@ -1,51 +1,52 @@
 <div class="form">
     <h2>Formulario de noticias</h2>
-    <hr>
 
-    <!-- Campo para el titulo -->
-    <div>
-        <label for="title">Titulo: </label>
-        <input id="title" type="text" placeholder="Introduce el titulo de la noticia" [(ngModel)]="newNews.title">
-    </div>
+    <form>
+        <!-- Campo para el titulo -->
+        <div>
+            <label for="title">Titulo: </label>
+            <input id="title" type="text" placeholder="Introduce el titulo de la noticia" [(ngModel)]="newNews.title" name="title">
+        </div>
 
-    <!-- Campo para ingresar la URL de una imagen -->
-    <div>
-        <label for="imageUrl">URL de la Imagen: </label>
-        <input id="imageUrl" type="text" placeholder="Introduce la URL de la imagen" [(ngModel)]="newNews.url">
-    </div>
-    
-    <!-- Vista previa de la imagen -->
-    <div ngIf="newNews.url" >
-        <img [src]="newNews.url" alt="Vista previa de la imagen" width="200">
-    </div>
+        <!-- Campo para ingresar la URL de una imagen -->
+        <div>
+            <label for="imageUrl">URL de la Imagen: </label>
+            <input id="imageUrl" type="text" placeholder="Introduce la URL de la imagen" [(ngModel)]="newNews.url" name="url">
+        </div>
+        
+        <!-- Vista previa de la imagen -->
+        <div ngIf="newNews.url" >
+            <img [src]="newNews.url" alt="Vista previa de la imagen" width="100">
+        </div>
 
-    <!-- Campo para el texto -->
-    <div>
-        <label for="texto">Texto: </label>
-        <textarea id="texto" placeholder="Descripcion de la noticia" [(ngModel)]="newNews.texto"></textarea>
-    </div>
+        <!-- Campo para el texto -->
+        <div>
+            <label for="texto">Texto: </label>
+            <textarea id="texto" placeholder="Descripcion de la noticia" [(ngModel)]="newNews.texto " name="texto"></textarea>
+        </div>
 
-    <!-- Campo para la fecha -->
-    <div>
-        <label for="fecha">Fecha: </label>
-        <input id="fecha" type="date" [(ngModel)]="newNews.fecha" lang="es-ES">
-    </div>
+        <!-- Campo para la fecha -->
+        <div>
+            <label for="fecha">Fecha: </label>
+            <input id="fecha" type="date" [(ngModel)]="newNews.fecha" lang="es-ES" name="fecha">
+        </div>
 
-    <!-- Campo para el tipo de noticia -->
-    <div>
-        <label for="tipo">Tipo: </label>
-        <select id="tipo" [(ngModel)]="newNews.tipo">
-            <option value="" disabled selected>Selecciona el tipo</option>
-            <option value="vivienda">Vivienda</option>
-            <option value="salud">Salud</option>
-            <option value="actualidad">Actualidad</option>
-            <option value="ciencia">Ciencia</option>
-            <option value="deportes">Deportes</option>
-            <option value="politica">Politica</option>
-            <option value="tecnologia">Tecnologia</option>
-            <option value="educacion">Educacion</option>
-        </select>
-    </div>
+        <!-- Campo para el tipo de noticia -->
+        <div>
+            <label for="tipo">Tipo: </label>
+            <select id="tipo" [(ngModel)]="newNews.tipo" name="tipo">
+                <option value="" disabled selected>Selecciona el tipo</option>
+                <option value="vivienda">Vivienda</option>
+                <option value="salud">Salud</option>
+                <option value="actualidad">Actualidad</option>
+                <option value="ciencia">Ciencia</option>
+                <option value="deportes">Deportes</option>
+                <option value="politica">Politica</option>
+                <option value="tecnologia">Tecnologia</option>
+                <option value="educacion">Educacion</option>
+            </select>
+        </div>
 
-    <button (click)="saveNews()">Guardar Noticia</button>
+        <button (click)="saveNews()">Guardar Noticia</button>
+    </form>
 </div>
