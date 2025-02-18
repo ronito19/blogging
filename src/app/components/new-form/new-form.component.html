@@ -1,17 +1,17 @@
 <div class="form">
     <h2>Formulario de noticias</h2>
-
-    <form>
+    <hr>
+    <form (ngSubmit)="saveNews()">
         <!-- Campo para el titulo -->
         <div>
             <label for="title">Titulo: </label>
-            <input id="title" type="text" placeholder="Introduce el titulo de la noticia" [(ngModel)]="newNews.title" name="title">
+            <input id="title" type="text" placeholder="Introduce el titulo de la noticia" [(ngModel)]="newNews.title" name="title" required>
         </div>
 
         <!-- Campo para ingresar la URL de una imagen -->
         <div>
             <label for="imageUrl">URL de la Imagen: </label>
-            <input id="imageUrl" type="text" placeholder="Introduce la URL de la imagen" [(ngModel)]="newNews.url" name="url">
+            <input id="imageUrl" type="text" placeholder="Introduce la URL de la imagen" [(ngModel)]="newNews.url" name="url" required>
         </div>
         
         <!-- Vista previa de la imagen -->
@@ -22,19 +22,19 @@
         <!-- Campo para el texto -->
         <div>
             <label for="texto">Texto: </label>
-            <textarea id="texto" placeholder="Descripcion de la noticia" [(ngModel)]="newNews.texto " name="texto"></textarea>
+            <textarea id="texto" placeholder="Descripcion de la noticia" [(ngModel)]="newNews.texto " name="texto" required></textarea>
         </div>
 
         <!-- Campo para la fecha -->
         <div>
             <label for="fecha">Fecha: </label>
-            <input id="fecha" type="date" [(ngModel)]="newNews.fecha" lang="es-ES" name="fecha">
+            <input id="fecha" type="date" [(ngModel)]="newNews.fecha" lang="es-ES" name="fecha" required>
         </div>
 
         <!-- Campo para el tipo de noticia -->
         <div>
             <label for="tipo">Tipo: </label>
-            <select id="tipo" [(ngModel)]="newNews.tipo" name="tipo">
+            <select id="tipo" [(ngModel)]="newNews.tipo" name="tipo" required>
                 <option value="" disabled selected>Selecciona el tipo</option>
                 <option value="vivienda">Vivienda</option>
                 <option value="salud">Salud</option>
@@ -47,6 +47,9 @@
             </select>
         </div>
 
-        <button (click)="saveNews()">Guardar Noticia</button>
+        <!-- Mensaje de ERROR -->
+         <div ngIf="errorMessage" style="color: red;"> {{errorMessage}} </div>
+
+        <button type="submit">Guardar Noticia</button>
     </form>
 </div>

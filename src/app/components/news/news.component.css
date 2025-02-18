@@ -6,7 +6,7 @@
 
 .noticias .flex article {
     width: 100%;
-    border: 1px solid black;
+    border: 5px solid tomato;
     padding: 10px;
 }
 

@@ -12,32 +12,21 @@ export class NewFormComponent {
   newNews: INews = { title: "", url: "", texto: "", fecha: new Date(), tipo: ""}
   @Output() catchNew: EventEmitter<INews> = new EventEmitter();
 
-  // Validacion
-  isValid(): boolean {
-    return (
-      this.newNews.title.trim() !== "" &&
-      this.newNews.url.trim() !== "" &&
-      this.newNews.texto.trim() !== "" &&
-      this.newNews.tipo.trim() !== "" 
-    );
-  }
-
-  // Funcion para enviar los datos del formulario
-  onSubmit(): void {
-    console.log('Noticias enviadas desde el formulario:', this.newNews)
-  }
+  // Mensaje de error
+  errorMessage: string = "";
 
 
   saveNews(): void {
-   if (this.isValid()) {
-    this.catchNew.emit(this.newNews);
-    console.log('Noticia guardada:', this.newNews);
-  
-
-  // Reiniciar el formulario
-    this.newNews = { title: "", url: "", texto: "", fecha: new Date(), tipo: "" };
-  } else {
-    console.log('El formulario contiene campos vacios.');
+    // Validacion con un if
+    if (!this.newNews.title || !this.newNews.url || !this.newNews.texto || !this.newNews.fecha || !this.newNews.tipo) {
+      this.errorMessage = "TODOS LOS CAMPOS SON OBLIGATORIOS";
+    } else {
+      this.catchNew.emit(this.newNews);
+      console.log('Noticia guardada:', this.newNews)
+    
+    
+      this.newNews = { title: "", url: "", texto: "", fecha: new Date(), tipo: "" };
+      this.errorMessage = "";
+    }    
   }
-}
 }
