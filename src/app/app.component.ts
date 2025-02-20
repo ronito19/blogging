@@ -82,7 +82,13 @@ export class AppComponent {
     
     this.arrayNews.push(newItem);
     this.newList = [...this.newList, newItem];
-    console.log('Noticia agregada en el contenedor:', newItem);
+    console.log('Noticia agregada en la lista y el la new-card:', newItem);
 
   }
+
+
+  goToNews(news: INews): void {
+    console.log('Ir a la noticia:', news);
+  }
+
 }

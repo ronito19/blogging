@@ -1,5 +1,9 @@
 <h2>Listado de Noticias</h2>
 <hr>
-<ul [innerHTML]="texto" class="lista"></ul>
+<li *ngFor="let noticia of news" (click)="onNewsClick(noticia)">
+    Título: <span class="news-title">{{ noticia.title }}</span>
+    ----- Fecha: <span class="news-date">{{ noticia.fecha | date:'dd/MM/yyyy' }}</span>
+    ----- Tipo de Noticia: <span class="news-type">{{ noticia.tipo }}</span>
+  </li>
 
 

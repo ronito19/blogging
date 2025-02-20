@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { INews } from '../../interfaces/inews.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-new-list',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './new-list.component.html',
   styleUrl: './new-list.component.css'
 })
@@ -12,7 +13,13 @@ import { INews } from '../../interfaces/inews.interface';
 
 export class NewListComponent {
   @Input() news: INews[] = [];
+  @Output() newsClicked: EventEmitter<INews> = new EventEmitter();
   texto: string = ""
+
+
+  onNewsClick(news: INews): void {
+    this.newsClicked.emit(news);
+  }
 
   ngOnChanges() {
     this.texto = "";
@@ -31,5 +38,7 @@ export class NewListComponent {
         -----  Tipo de Noticia: <span class="news-type"> ${news.tipo} </span>
         </li>`;
     });
+
+    
   }
 }

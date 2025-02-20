@@ -32,7 +32,8 @@ main section {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #706b6b;
-    color: #242020;
+    background-color: #b1abab;
+    color: #0e0d0d;
+    font-family: serif;
 }
 
