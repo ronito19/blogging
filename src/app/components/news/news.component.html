@@ -6,7 +6,7 @@
         @for(noticia of MyNews; track noticia.fecha) {
         <article class="news-card">
             <h3>{{noticia.title}}</h3>
-            <p class="new-date">Fecha: {{noticia.fecha}}</p>
+            <p class="new-date">Fecha: {{noticia.fecha }}</p>
             <p class="new-type">Tipo de Noticia: {{noticia.tipo}}</p>
             <figure class="img-url">
                 <img [src]="noticia.url" [alt]="noticia.title" class="new-image">

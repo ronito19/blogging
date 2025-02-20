@@ -11,7 +11,6 @@ export class NewsComponent {
   @Input() MyNews: INews[] = [];
   news: INews[] = this.MyNews;
 
-  
 
   ngOnInit() {
     console.log(this.MyNews)

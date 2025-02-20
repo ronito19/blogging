@@ -144,7 +144,7 @@ export class AppComponent {
     }
   ]
 
-  getDataForm(event: INews) {
+  getDataForm(event: INews): void {
     this.newList = [...this.newList, event]
 
   }

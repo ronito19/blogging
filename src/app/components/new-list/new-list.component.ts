@@ -14,9 +14,16 @@ export class NewListComponent {
   ngOnChanges() {
     this.texto = "";
     this.news.forEach(news => {
-      this.texto += `<li class="">${news.title} 
-                      - ${news.fecha} 
-                      - ${news.tipo}
+      const fecha = new Date(news.fecha);
+      const fechaFormat = fecha.toLocaleDateString('es-ES', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+      });
+
+      this.texto += `<li class="">Titulo: ${news.title} 
+                      - Fecha: ${fechaFormat} 
+                      - Tipo: ${news.tipo}
                     </li>`
     })
   }
