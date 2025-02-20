@@ -142,10 +142,14 @@ export class AppComponent {
       fecha: new Date('2023-10-07'),
       tipo: 'Tecnologia'
     }
-  ]
+  ];
 
-  getDataForm(event: INews): void {
-    this.newList = [...this.newList, event]
+
+  getDataForm(newItem: INews): void {
+    this.arrayNews.push(newItem);
+    console.log('Noticia agregada en el contenedor:', newItem);
+    
+    this.newList = [...this.newList, newItem]
 
   }
 }

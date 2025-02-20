@@ -13,7 +13,8 @@ export class NewsComponent {
 
 
   ngOnInit() {
-    console.log(this.MyNews)
+    this.news = [...this.MyNews];
+    console.log(this.MyNews);
   }
   
 }
