@@ -3,3 +3,12 @@
     margin: 10px;
     color: white;
 }
+
+
+.news-date {
+    color: green;
+}
+
+.news-type {
+    color: red;
+}

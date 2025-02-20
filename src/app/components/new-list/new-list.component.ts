@@ -7,6 +7,9 @@ import { INews } from '../../interfaces/inews.interface';
   templateUrl: './new-list.component.html',
   styleUrl: './new-list.component.css'
 })
+
+  
+
 export class NewListComponent {
   @Input() news: INews[] = [];
   texto: string = ""
@@ -21,10 +24,12 @@ export class NewListComponent {
         year: 'numeric'
       });
 
-      this.texto += `<li class="">Titulo: ${news.title} 
-                      - Fecha: ${fechaFormat} 
-                      - Tipo: ${news.tipo}
-                    </li>`
-    })
+      this.texto += `
+        <li class="">
+        Titulo: <span class="news-title"> ${news.title} </span> 
+        -----  Fecha: <span class="news-date"> ${fechaFormat} </span>
+        -----  Tipo de Noticia: <span class="news-type"> ${news.tipo} </span>
+        </li>`;
+    });
   }
 }
