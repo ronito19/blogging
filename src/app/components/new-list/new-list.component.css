@@ -4,11 +4,18 @@
     color: white;
 }
 
+li {
+    line-height: 25px;
+}
+
+.news-title {
+    color: rgb(27, 71, 126);
+}
 
 .news-date {
     color: green;
 }
 
 .news-type {
-    color: red;
+    color: rgb(180, 42, 18);
 }

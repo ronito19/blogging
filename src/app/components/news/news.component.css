@@ -17,6 +17,7 @@
     width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+    font-size: 1.1rem;
 }
 
 .news-card:hover {
@@ -37,10 +38,15 @@
 }
 
 .new-text {
-    color: #333;
+    color: #3a11a1;
     font-family: serif;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: bold;
     margin: 10px 0;
+}
+
+h3 {
+    color: rgb(19, 46, 81);
 }
 
 .new-date {
@@ -67,6 +73,6 @@
 
 @media(width >= 1200px) {
     .noticias .flex article {
-        width: calc(33.33% - 0.625rem);
+        width: calc(25% - 0.625rem);
     }
 }
